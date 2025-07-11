@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- Optional Custom Base Styles --- */
+@layer base {
+  body {
+    @apply bg-[#1e1a15] text-white font-sans;
+  }
+
+  input, textarea {
+    @apply outline-none focus:ring-2 focus:ring-orange-400;
+  }
+}
+
+/* --- Custom Components (reusable classes) --- */
+@layer components {
+  .btn-primary {
+    @apply bg-yellow-400 text-black font-semibold py-2 px-4 rounded-full hover:bg-yellow-500 transition;
+  }
+
+  .btn-outline {
+    @apply border border-yellow-400 text-yellow-400 font-semibold py-2 px-4 rounded-full hover:bg-yellow-400 hover:text-black transition;
+  }
+
+  .card {
+    @apply bg-[#2b2317] p-4 rounded-lg shadow-md;
+  }
+
+  .heading {
+    @apply text-xl font-bold mb-4;
+  }
+}
+
+/* --- Utility Extensions (optional) --- */
+@layer utilities {
+  .bg-dotted-pattern {
+    background-image: repeating-linear-gradient(
+      to right,
+      white,
+      white 2px,
+      transparent 2px,
+      transparent 8px
+    );
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
